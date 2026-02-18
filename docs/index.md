@@ -6,7 +6,7 @@ title: "Deep Link RPA Field Inventory"
 # California Residential Purchase Agreement (RPA)
 ## Deep Link Field Inventory, VoicePilot
 
-**Version:** 1.0.0  |  **Updated:** 2026-02-18  |  [Changelog](./CHANGELOG)  |  [Screenshots](https://github.com/EthicaAI/voicepilot-forms/tree/main/screenshots/v1.0.0)
+**Version:** 1.0.0  |  **Updated:** 2026-02-18  |  [Changelog](./CHANGELOG)  |  [Screenshots](https://github.com/EthicaAI/voicepilot-forms/tree/main/screenshots/v1.0.0)  |  [Removals](./REMOVALS)  |  [Non-RPA Fields](./NON-RPA-FIELDS)
 
 This document inventories all fields on the VoicePilot deep link offer form. The form is modeled after the C.A.R. RPA but is a distinct product artifact with its own field set. Fields that go beyond the RPA are marked with a `+` symbol.
 
