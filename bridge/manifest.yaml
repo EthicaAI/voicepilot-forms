@@ -1,0 +1,12 @@
+# Bridge Manifest
+# Declares active form versions for the bridge system
+
+bridge_version: "1.0.0"
+
+forms:
+  - id: CA-RPA
+    state: CA
+    form_type: RPA
+    active_version: "2024"
+    file: CA/RPA/v2024/fields.yaml
+    description: "California Residential Purchase Agreement"

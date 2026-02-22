@@ -1,0 +1,3338 @@
+- id: seller_name
+  label: Seller Name
+  section: sellers_agents
+  field_type: text
+  source: null
+  info:
+    summary: The full legal name of the property seller.
+    detail: >-
+      The full legal name of the property seller. On the standard RPA, seller information is filled in at the time of
+      acceptance, not at offer submission. This field is included here for agent workflow convenience so you can
+      identify the seller while preparing the offer.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: voicepilot_addition
+  derived_from: null
+  schema_key: seller_entity_names
+  deeplink_key: sellerName
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - voicepilot_addition
+- id: seller_email
+  label: Seller Email
+  section: sellers_agents
+  field_type: email
+  source: null
+  info:
+    summary: The seller's email address.
+    detail: >-
+      The seller's email address. This is not part of the RPA offer body but is included for your records and workflow
+      convenience. It can be useful for coordinating with the listing agent or for electronic signature delivery.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: workflow_only
+  derived_from: null
+  schema_key: null
+  deeplink_key: sellerEmail
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - workflow_only
+- id: seller_phone
+  label: Seller Phone
+  section: sellers_agents
+  field_type: phone
+  source: null
+  info:
+    summary: The seller's phone number.
+    detail: >-
+      The seller's phone number. Like other seller fields, this is not part of the RPA offer but is kept here so agents
+      have seller contact details readily available during the offer preparation process.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: workflow_only
+  derived_from: null
+  schema_key: null
+  deeplink_key: sellerPhone
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - workflow_only
+- id: buyer_brokerage
+  label: Buyer Brokerage
+  section: sellers_agents
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "2"
+    section_label: Agency Representation
+    paragraph: null
+    field_name: Buyer Brokerage
+  info:
+    summary: The name of the brokerage firm representing the buyer.
+    detail: >-
+      The name of the brokerage firm representing the buyer. This must match the brokerage name as registered with the
+      California DRE. It appears on page 17 of the RPA and establishes which firm is acting as the buyer's agent in the
+      transaction.
+    rpa_context: RPA Section 2 (Agency Representation)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyer_brokerage_firm
+  deeplink_key: buyerBrokerage
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: buyer_brokerage_dre
+  label: "Buyer Brokerage DRE #"
+  section: sellers_agents
+  field_type: license
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "2"
+    section_label: Agency Representation
+    paragraph: null
+    field_name: "Buyer Brokerage DRE #"
+  info:
+    summary: The California Department of Real Estate license number for the buyer's brokerage firm.
+    detail: >-
+      The California Department of Real Estate license number for the buyer's brokerage firm. This is the firm-level
+      license number, not the individual agent's license. It is required for all real estate transactions in California
+      and appears alongside the brokerage name on the RPA.
+    rpa_context: RPA Section 2 (Agency Representation)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyer_agent_dre_license
+  deeplink_key: buyerBrokerageDre
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: buyer_agent
+  label: Buyer Agent
+  section: sellers_agents
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "2"
+    section_label: Agency Representation
+    paragraph: null
+    field_name: Buyer Agent
+  info:
+    summary: The full name of the real estate agent representing the buyer.
+    detail: >-
+      The full name of the real estate agent representing the buyer. This is the individual agent's name, not the
+      brokerage. It must match the name on the agent's DRE license and will appear on the executed agreement.
+    rpa_context: RPA Section 2 (Agency Representation)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyer_agent_name
+  deeplink_key: buyerAgent
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: buyer_agent_license
+  label: Buyer Agent License
+  section: sellers_agents
+  field_type: license
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "2"
+    section_label: Agency Representation
+    paragraph: null
+    field_name: Buyer Agent License
+  info:
+    summary: The individual DRE license number of the buyer's agent.
+    detail: >-
+      The individual DRE license number of the buyer's agent. California requires all agents acting in a transaction to
+      disclose their personal license number. This is distinct from the brokerage license number and can be verified at
+      the DRE website.
+    rpa_context: RPA Section 2 (Agency Representation)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyer_agent_dre_license
+  deeplink_key: buyerAgentLicense
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: buyer_agent_phone
+  label: Buyer Agent Phone
+  section: sellers_agents
+  field_type: phone
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "2"
+    section_label: Agency Representation
+    paragraph: null
+    field_name: Buyer Agent Phone
+  info:
+    summary: The buyer agent's phone number for transaction-related communication.
+    detail: >-
+      The buyer agent's phone number for transaction-related communication. This is included in the broker information
+      section of the RPA and provides the primary contact number for the listing side to reach the buyer's
+      representative.
+    rpa_context: RPA Section 2 (Agency Representation)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyer_agent_phone
+  deeplink_key: buyerAgentPhone
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: buyer_agent_email
+  label: Buyer Agent Email
+  section: sellers_agents
+  field_type: email
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "2"
+    section_label: Agency Representation
+    paragraph: null
+    field_name: Buyer Agent Email
+  info:
+    summary: The buyer agent's email address.
+    detail: >-
+      The buyer agent's email address. This is used for electronic delivery of documents, disclosures, and transaction
+      communications. The RPA allows email as an approved method of document delivery under the agreement's terms.
+    rpa_context: RPA Section 2 (Agency Representation)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyer_agent_email
+  deeplink_key: buyerAgentEmail
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: listing_brokerage
+  label: Listing Brokerage
+  section: sellers_agents
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "2"
+    section_label: Agency Representation
+    paragraph: null
+    field_name: Listing Brokerage
+  info:
+    summary: The name of the brokerage firm representing the seller (listing side).
+    detail: >-
+      The name of the brokerage firm representing the seller (listing side). This must match the brokerage name
+      registered with the California DRE. The listing brokerage is the firm that holds the listing agreement with the
+      seller.
+    rpa_context: RPA Section 2 (Agency Representation)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: seller_brokerage_firm
+  deeplink_key: listingBrokerage
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: listing_agent
+  label: Listing Agent
+  section: sellers_agents
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "2"
+    section_label: Agency Representation
+    paragraph: null
+    field_name: Listing Agent
+  info:
+    summary: The full name of the listing agent representing the seller.
+    detail: >-
+      The full name of the listing agent representing the seller. This is the individual agent who listed the property
+      and will present offers to the seller. The name must match the agent's DRE license.
+    rpa_context: RPA Section 2 (Agency Representation)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: seller_agent_name
+  deeplink_key: listingAgent
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: listing_agent_license
+  label: Listing Agent License
+  section: sellers_agents
+  field_type: license
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "2"
+    section_label: Agency Representation
+    paragraph: null
+    field_name: Listing Agent License
+  info:
+    summary: The individual DRE license number of the listing agent.
+    detail: >-
+      The individual DRE license number of the listing agent. Required for all California real estate transactions. This
+      can be verified on the DRE website and must be disclosed on the purchase agreement.
+    rpa_context: RPA Section 2 (Agency Representation)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: seller_agent_dre_license
+  deeplink_key: listingAgentLicense
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: listing_agent_phone
+  label: Listing Agent Phone
+  section: sellers_agents
+  field_type: phone
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "2"
+    section_label: Agency Representation
+    paragraph: null
+    field_name: Listing Agent Phone
+  info:
+    summary: The listing agent's phone number.
+    detail: >-
+      The listing agent's phone number. This is included in the broker information section and provides the buyer side a
+      direct line to the seller's representative for offer discussions and transaction coordination.
+    rpa_context: RPA Section 2 (Agency Representation)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: seller_agent_phone
+  deeplink_key: listingAgentPhone
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: listing_agent_email
+  label: Listing Agent Email
+  section: sellers_agents
+  field_type: email
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "2"
+    section_label: Agency Representation
+    paragraph: null
+    field_name: Listing Agent Email
+  info:
+    summary: The listing agent's email address for transaction-related communications and electronic document delivery.
+    detail: >-
+      The listing agent's email address for transaction-related communications and electronic document delivery. This is
+      the primary point of contact on the seller side for sending disclosures, counteroffers, and status updates.
+    rpa_context: RPA Section 2 (Agency Representation)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: seller_agent_email
+  deeplink_key: listingAgentEmail
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: buyer_1_name
+  label: Buyer 1 Name
+  section: buyers
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "1"
+    section_label: Offer
+    paragraph: null
+    field_name: Buyer 1 Name
+  info:
+    summary: The full legal name of the primary buyer.
+    detail: >-
+      The full legal name of the primary buyer. If the buyer is an entity (trust, LLC, corporation, or partnership),
+      enter the full legal entity name. This name will appear on title and all transaction documents, so accuracy is
+      critical.
+    rpa_context: RPA Section 1 (Offer)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyers_0_name
+  deeplink_key: buyer1Name
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: buyer_1_entity_type
+  label: Buyer 1 Entity Type
+  section: buyers
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "1"
+    section_label: Offer
+    paragraph: null
+    field_name: Buyer 1 Entity Type
+  info:
+    summary: The legal classification of the buyer.
+    detail: >-
+      The legal classification of the buyer. Select "Individual" for a natural person. If the buyer is purchasing
+      through a legal entity, select the appropriate type: Trust, LLC, Corporation, or Partnership. The entity type
+      affects vesting, tax treatment, and may require additional documentation such as trust certification or articles
+      of organization.
+    rpa_context: RPA Section 1 (Offer)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyers_0_buyer_type
+  deeplink_key: buyer1EntityType
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: buyer_2_name
+  label: Buyer 2 Name
+  section: buyers
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "1"
+    section_label: Offer
+    paragraph: null
+    field_name: Buyer 2 Name
+  info:
+    summary: The full legal name of the second buyer, if applicable.
+    detail: >-
+      The full legal name of the second buyer, if applicable. When two or more individuals are purchasing together
+      (e.g., spouses or partners), list each buyer separately. The vesting section will determine how title is held
+      among multiple buyers.
+    rpa_context: RPA Section 1 (Offer)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyers_1_name
+  deeplink_key: buyer2Name
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: buyer_2_entity_type
+  label: Buyer 2 Entity Type
+  section: buyers
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "1"
+    section_label: Offer
+    paragraph: null
+    field_name: Buyer 2 Entity Type
+  info:
+    summary: The legal classification of the second buyer.
+    detail: >-
+      The legal classification of the second buyer. Select "Individual" for a natural person or the appropriate entity
+      type. When multiple buyers of different entity types are purchasing together, each buyer's entity type should be
+      specified independently.
+    rpa_context: RPA Section 1 (Offer)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyers_1_buyer_type
+  deeplink_key: buyer2EntityType
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: buyer_3_name
+  label: Buyer 3 Name
+  section: buyers
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "1"
+    section_label: Offer
+    paragraph: null
+    field_name: Buyer 3 Name
+  info:
+    summary: The full legal name of the third buyer, if applicable.
+    detail: >-
+      The full legal name of the third buyer, if applicable. Three or more buyers on a single purchase is less common
+      but may occur with investment groups, family purchases, or tenancy-in-common arrangements.
+    rpa_context: RPA Section 1 (Offer)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyers_2_name
+  deeplink_key: buyer3Name
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: buyer_3_entity_type
+  label: Buyer 3 Entity Type
+  section: buyers
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "1"
+    section_label: Offer
+    paragraph: null
+    field_name: Buyer 3 Entity Type
+  info:
+    summary: The legal classification of the third buyer.
+    detail: >-
+      The legal classification of the third buyer. Select the appropriate entity type. Multiple buyers with different
+      entity types (e.g., an individual and a trust purchasing together) should each have their type specified.
+    rpa_context: RPA Section 1 (Offer)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyers_2_buyer_type
+  deeplink_key: buyer3EntityType
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: buyer_4_name
+  label: Buyer 4 Name
+  section: buyers
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "1"
+    section_label: Offer
+    paragraph: null
+    field_name: Buyer 4 Name
+  info:
+    summary: The full legal name of the fourth buyer, if applicable.
+    detail: >-
+      The full legal name of the fourth buyer, if applicable. If there are more than four buyers, the Additional
+      Signature Addendum (ASA) may be needed to accommodate all parties.
+    rpa_context: RPA Section 1 (Offer)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyers_3_name
+  deeplink_key: buyer4Name
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: buyer_4_entity_type
+  label: Buyer 4 Entity Type
+  section: buyers
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "1"
+    section_label: Offer
+    paragraph: null
+    field_name: Buyer 4 Entity Type
+  info:
+    summary: The legal classification of the fourth buyer.
+    detail: >-
+      The legal classification of the fourth buyer. As with all buyers, select "Individual" for a natural person or the
+      appropriate entity type. Consult with the escrow officer regarding vesting options for transactions with multiple
+      buyers.
+    rpa_context: RPA Section 1 (Offer)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyers_3_buyer_type
+  deeplink_key: buyer4EntityType
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: offer_price
+  label: Offer Price
+  section: price_deposits
+  field_type: currency
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Offer Price
+  info:
+    summary: The total purchase price being offered for the property.
+    detail: >-
+      The total purchase price being offered for the property. This is the headline number on the offer and includes all
+      financing components (down payment, loans, and any credits). Enter the full dollar amount. In competitive markets,
+      consider pricing strategy relative to list price, comparable sales, and appraisal risk.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: offer_price
+  deeplink_key: offerPrice
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: initial_deposit
+  label: Initial Deposit ($)
+  section: price_deposits
+  field_type: currency
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3A
+    section_label: Initial Deposit
+    paragraph: null
+    field_name: Initial Deposit ($)
+  info:
+    summary: The earnest money deposit (EMD) amount in dollars.
+    detail: >-
+      The earnest money deposit (EMD) amount in dollars. This is the good-faith deposit that shows the buyer's
+      seriousness and is delivered after acceptance. Typical deposits in California range from 1% to 3% of the purchase
+      price, though higher deposits can strengthen an offer. The deposit is applied toward the purchase price at
+      closing.
+    rpa_context: RPA Section 3A (Initial Deposit)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: initial_deposit
+  deeplink_key: initialDeposit
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: initial_deposit_pct
+  label: Initial Deposit (%)
+  section: price_deposits
+  field_type: percentage
+  source: null
+  info:
+    summary: A calculated convenience field showing the initial deposit as a percentage of the offer price.
+    detail: >-
+      A calculated convenience field showing the initial deposit as a percentage of the offer price. This is
+      automatically derived from the deposit amount and offer price. It is not a field on the RPA but helps agents
+      quickly assess whether the deposit amount is competitive.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: derived
+  derived_from: initial_deposit
+  schema_key: null
+  deeplink_key: initialDepositPercent
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - derived
+    - calculated
+- id: initial_deposit_due_within
+  label: Initial Deposit Due Within
+  section: price_deposits
+  field_type: number
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3A
+    section_label: Initial Deposit
+    paragraph: null
+    field_name: Initial Deposit Due Within
+  info:
+    summary: The number of business days after acceptance within which the buyer must deliver the initial deposit.
+    detail: >-
+      The number of business days after acceptance within which the buyer must deliver the initial deposit. The RPA
+      default is typically 3 business days. Missing this deadline can put the buyer in breach, so ensure the buyer has
+      funds readily accessible. The deposit is delivered to the party specified in the "Initial Deposit Held By" field.
+    rpa_context: RPA Section 3A (Initial Deposit)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: initial_deposit_days
+  deeplink_key: initialDepositDueWithin
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: deposit_method
+  label: Deposit Method
+  section: price_deposits
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3A
+    section_label: Initial Deposit
+    paragraph: null
+    field_name: Deposit Method
+  info:
+    summary: How the initial deposit will be delivered.
+    detail: >-
+      How the initial deposit will be delivered. Options are Wire Transfer, Check, or Cashier's Check. Wire transfer is
+      the most common and fastest method. Personal checks may not be accepted by all escrow companies. Cashier's checks
+      provide guaranteed funds. Be aware of wire fraud risks and always verify wiring instructions by phone.
+    rpa_context: RPA Section 3A (Initial Deposit)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: deposit_method
+  deeplink_key: depositMethod
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: initial_deposit_held_by
+  label: Initial Deposit Held By
+  section: price_deposits
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3A
+    section_label: Initial Deposit
+    paragraph: null
+    field_name: Initial Deposit Held By
+  info:
+    summary: Who will hold the buyer's earnest money deposit.
+    detail: >-
+      Who will hold the buyer's earnest money deposit. Options are Escrow Holder (most common), Seller's Broker, or
+      Other. The escrow holder is the safest choice as deposits are held in a trust account governed by escrow
+      regulations. If "Seller's Broker" is selected, the listing broker's trust account holds the funds.
+    rpa_context: RPA Section 3A (Initial Deposit)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: initial_deposit_held_by
+  deeplink_key: initialDepositHeldBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: escrow_holder
+  label: Escrow Holder
+  section: price_deposits
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3A
+    section_label: Initial Deposit
+    paragraph: null
+    field_name: Escrow Holder
+  info:
+    summary: The name of the escrow company that will handle the transaction.
+    detail: >-
+      The name of the escrow company that will handle the transaction. The escrow holder is a neutral third party that
+      manages funds, documents, and the closing process. In California, the buyer typically selects the escrow company,
+      though this is negotiable. Enter the company name (e.g., "First American Title" or "Chicago Title").
+    rpa_context: RPA Section 3A (Initial Deposit)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: escrow_holder
+  deeplink_key: escrowHolder
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: escrow_contact
+  label: Escrow Contact
+  section: price_deposits
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3A
+    section_label: Initial Deposit
+    paragraph: null
+    field_name: Escrow Contact
+  info:
+    summary: The name and/or contact information of the specific escrow officer handling the transaction.
+    detail: >-
+      The name and/or contact information of the specific escrow officer handling the transaction. Having a named
+      contact ensures smooth communication during the closing process. Include the escrow officer's name and phone
+      number or email if known.
+    rpa_context: RPA Section 3A (Initial Deposit)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: escrow_holder_contact
+  deeplink_key: escrowContact
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: increased_deposit_amount
+  label: Increased Deposit Amount
+  section: price_deposits
+  field_type: currency
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3B
+    section_label: Increased Deposit
+    paragraph: null
+    field_name: Increased Deposit Amount
+  info:
+    summary: An additional deposit amount to be delivered after the initial deposit.
+    detail: >-
+      An additional deposit amount to be delivered after the initial deposit. This is used to demonstrate stronger
+      financial commitment, often triggered after contingency removal. The increased deposit is in addition to (not
+      replacing) the initial deposit. If no increased deposit is planned, leave this blank.
+    rpa_context: RPA Section 3B (Increased Deposit)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: increased_deposit
+  deeplink_key: increasedDepositAmount
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: increased_deposit_due_within
+  label: Increased Deposit Due Within
+  section: price_deposits
+  field_type: number
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3B
+    section_label: Increased Deposit
+    paragraph: null
+    field_name: Increased Deposit Due Within
+  info:
+    summary: The number of days after acceptance within which the buyer must deliver the increased deposit.
+    detail: >-
+      The number of days after acceptance within which the buyer must deliver the increased deposit. This timeline runs
+      from the date of acceptance, not from when the initial deposit was delivered. Coordinate this with contingency
+      removal dates to avoid delivering additional funds before inspections are complete.
+    rpa_context: RPA Section 3B (Increased Deposit)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: increased_deposit_days
+  deeplink_key: increasedDepositDueWithin
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: funds_source
+  label: Funds Source
+  section: price_deposits
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Funds Source
+  info:
+    summary: The source of the buyer's funds for the purchase.
+    detail: >-
+      The source of the buyer's funds for the purchase. Options are Cash, Loan, Gift, Sale of Property, or Other. This
+      tells the seller how the buyer intends to fund the purchase. "Sale of Property" indicates the buyer needs to sell
+      another property first, which may trigger a contingency. Multiple sources can apply (e.g., loan plus gift for down
+      payment).
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: funds_source
+  deeplink_key: fundsSource
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: proof_of_funds_attached
+  label: Proof of Funds Attached
+  section: price_deposits
+  field_type: boolean
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Proof of Funds Attached
+  info:
+    summary: Whether documentation proving the buyer has sufficient funds is included with the offer.
+    detail: >-
+      Whether documentation proving the buyer has sufficient funds is included with the offer. Proof of funds typically
+      includes bank statements, investment account statements, or a letter from a financial institution. Attaching proof
+      of funds strengthens an offer, especially for cash offers or large down payments.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: proof_of_funds_attached
+  deeplink_key: proofOfFundsAttached
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: appraisal_minimum_type
+  label: Appraisal Minimum Type
+  section: price_deposits
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Appraisal Minimum Type
+  info:
+    summary: Determines the minimum appraised value the buyer will accept.
+    detail: >-
+      Determines the minimum appraised value the buyer will accept. "Purchase Price" means the buyer requires the
+      property to appraise at or above the offer price. "Fixed Amount" allows the buyer to specify a lower threshold,
+      effectively agreeing to cover any gap between the appraised value and the purchase price. Waiving or lowering the
+      appraisal minimum strengthens the offer but increases buyer risk.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: appraisal_minimum_type
+  deeplink_key: appraisalMinimumType
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: seller_credit
+  label: Seller Credit ($)
+  section: price_deposits
+  field_type: currency
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Seller Credit ($)
+  info:
+    summary: The dollar amount the buyer is requesting the seller to credit back at closing.
+    detail: >-
+      The dollar amount the buyer is requesting the seller to credit back at closing. Seller credits are typically used
+      to offset the buyer's closing costs, prepaid items, or repair costs. The credit reduces the seller's net proceeds.
+      Lender guidelines may cap the allowable seller credit based on loan type and down payment percentage.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: seller_credit_requested
+  deeplink_key: sellerCredit
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: seller_credit_pct
+  label: Seller Credit (%)
+  section: price_deposits
+  field_type: percentage
+  source: null
+  info:
+    summary: A calculated convenience field showing the seller credit as a percentage of the offer price.
+    detail: >-
+      A calculated convenience field showing the seller credit as a percentage of the offer price. This is automatically
+      derived from the credit amount and offer price. It helps agents quickly assess the magnitude of the credit request
+      and check against lender limits (e.g., conventional loans often cap seller credits at 3% for low down payment
+      buyers).
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: derived
+  derived_from: seller_credit
+  schema_key: null
+  deeplink_key: sellerCreditPercent
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - derived
+    - calculated
+- id: seller_credit_purpose
+  label: Seller Credit Purpose
+  section: price_deposits
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Seller Credit Purpose
+  info:
+    summary: A description of what the seller credit will be applied toward.
+    detail: >-
+      A description of what the seller credit will be applied toward. Common purposes include "closing costs," "rate
+      buydown," "repairs," or a combination. Being specific about the purpose helps the seller evaluate the request and
+      may be required by the buyer's lender for underwriting purposes.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: seller_credit_purpose
+  deeplink_key: sellerCreditPurpose
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: seller_credit_notes
+  label: Seller Credit Notes
+  section: price_deposits
+  field_type: textarea
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Seller Credit Notes
+  info:
+    summary: Any additional notes or conditions related to the seller credit.
+    detail: >-
+      Any additional notes or conditions related to the seller credit. Use this for specific details that don't fit in
+      the purpose field, such as "credit to be applied to non-recurring closing costs only" or "credit amount not to
+      exceed actual closing costs." Lender restrictions on credits should be noted here.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: seller_credit_notes
+  deeplink_key: sellerCreditNotes
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: financing_type
+  label: Financing Type
+  section: financing
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3C
+    section_label: Loans
+    paragraph: null
+    field_name: Financing Type
+  info:
+    summary: The type of loan the buyer will use to finance the purchase.
+    detail: >-
+      The type of loan the buyer will use to finance the purchase. Options include Cash (no loan), Conventional, FHA,
+      VA, USDA, Seller Financing, or Other. The financing type affects the offer's competitiveness — cash and
+      conventional offers are generally preferred by sellers. FHA and VA loans have specific property condition
+      requirements and appraisal standards that sellers should be aware of.
+    rpa_context: RPA Section 3C (Loans)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: financing_type
+  deeplink_key: financingType
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: cash_offer
+  label: Cash Offer
+  section: financing
+  field_type: boolean
+  source: null
+  info:
+    summary: Whether this is an all-cash purchase with no financing contingency.
+    detail: >-
+      Whether this is an all-cash purchase with no financing contingency. A true cash offer means the buyer has liquid
+      funds to cover the entire purchase price without any loan. Cash offers are typically stronger because they
+      eliminate appraisal and loan contingency risks, and can close faster. The buyer should have proof of funds readily
+      available.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: derived
+  derived_from: financing_type
+  schema_key: null
+  deeplink_key: cashOffer
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - derived
+    - calculated
+- id: down_payment
+  label: Down Payment ($)
+  section: financing
+  field_type: currency
+  source: null
+  info:
+    summary: The dollar amount the buyer will pay out of pocket toward the purchase price.
+    detail: >-
+      The dollar amount the buyer will pay out of pocket toward the purchase price. The down payment is the difference
+      between the purchase price and the loan amount. Higher down payments generally result in better loan terms and
+      make the offer more competitive. The down payment amount should be consistent with the loan type selected.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: derived
+  derived_from: down_payment_pct
+  schema_key: null
+  deeplink_key: downPayment
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - derived
+    - calculated
+- id: down_payment_pct
+  label: Down Payment (%)
+  section: financing
+  field_type: percentage
+  source: null
+  info:
+    summary: A calculated convenience field showing the down payment as a percentage of the offer price.
+    detail: >-
+      A calculated convenience field showing the down payment as a percentage of the offer price. This is automatically
+      derived from the down payment amount and offer price. Common thresholds: 20% avoids PMI on conventional loans,
+      3.5% is the FHA minimum, and VA/USDA allow 0% down.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: derived
+  derived_from: down_payment
+  schema_key: down_payment_percent
+  deeplink_key: downPaymentPercent
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - derived
+    - calculated
+- id: loan_amount
+  label: Loan Amount
+  section: financing
+  field_type: currency
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3C
+    section_label: Loans
+    paragraph: null
+    field_name: Loan Amount
+  info:
+    summary: The total amount the buyer intends to borrow.
+    detail: >-
+      The total amount the buyer intends to borrow. This should equal the purchase price minus the down payment
+      (excluding any seller credits). Ensure the loan amount is consistent with the financing type and down payment
+      percentage. For FHA loans, the loan amount may include the upfront mortgage insurance premium.
+    rpa_context: RPA Section 3C (Loans)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: loan_amount
+  deeplink_key: loanAmount
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: interest_rate
+  label: Interest Rate (%)
+  section: financing
+  field_type: percentage
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3C
+    section_label: Loans
+    paragraph: null
+    field_name: Interest Rate (%)
+  info:
+    summary: The interest rate specified in the buyer's loan terms.
+    detail: >-
+      The interest rate specified in the buyer's loan terms. This is typically the rate quoted in the pre-approval
+      letter or the rate the buyer is targeting. While the actual rate locks closer to closing, stating a rate in the
+      offer shows the seller the buyer's expected loan terms. Leave blank if not yet determined.
+    rpa_context: RPA Section 3C (Loans)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: interest_rate
+  deeplink_key: interestRate
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: interest_rate_type
+  label: Interest Rate Type
+  section: financing
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3C
+    section_label: Loans
+    paragraph: null
+    field_name: Interest Rate Type
+  info:
+    summary: Whether the loan has a fixed or adjustable interest rate.
+    detail: >-
+      Whether the loan has a fixed or adjustable interest rate. A fixed-rate loan maintains the same rate for the life
+      of the loan. An adjustable-rate mortgage (ARM) has a rate that can change after an initial fixed period. Most
+      residential purchases use fixed-rate loans, but ARMs may offer lower initial rates.
+    rpa_context: RPA Section 3C (Loans)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: interest_rate_type
+  deeplink_key: interestRateType
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: loan_points
+  label: Loan Points
+  section: financing
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3C
+    section_label: Loans
+    paragraph: null
+    field_name: Loan Points
+  info:
+    summary: Discount points the buyer intends to pay to lower the interest rate.
+    detail: >-
+      Discount points the buyer intends to pay to lower the interest rate. One point equals 1% of the loan amount.
+      Paying points upfront reduces the monthly payment over the life of the loan. This is typically a buyer cost and is
+      noted here to give the seller a complete picture of the buyer's financing strategy.
+    rpa_context: RPA Section 3C (Loans)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: loan_points
+  deeplink_key: loanPoints
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: pre_approval_attached
+  label: Pre-approval Attached
+  section: financing
+  field_type: boolean
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3C
+    section_label: Loans
+    paragraph: null
+    field_name: Pre-approval Attached
+  info:
+    summary: Whether a pre-approval letter from the buyer's lender is included with the offer.
+    detail: >-
+      Whether a pre-approval letter from the buyer's lender is included with the offer. A pre-approval letter
+      demonstrates that the buyer has been vetted by a lender and is qualified for the loan amount. Attaching a
+      pre-approval significantly strengthens the offer. It is distinct from pre-qualification, which is a less rigorous
+      review.
+    rpa_context: RPA Section 3C (Loans)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: preapproval_attached
+  deeplink_key: preApprovalAttached
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: pre_qualification_status
+  label: Pre-qualification Status
+  section: financing
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3C
+    section_label: Loans
+    paragraph: null
+    field_name: Pre-qualification Status
+  info:
+    summary: The level of lender vetting the buyer has completed.
+    detail: >-
+      The level of lender vetting the buyer has completed. "Pre-qualified" means the buyer provided basic financial
+      information and received an initial estimate. "Pre-approved" means the lender verified income, assets, and credit.
+      "Fully Underwritten" means the loan has been through full underwriting and only needs the property — this is the
+      strongest qualification level.
+    rpa_context: RPA Section 3C (Loans)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: prequalification_status
+  deeplink_key: preQualificationStatus
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: close_of_escrow_days
+  label: Close of Escrow (days)
+  section: closing_possession
+  field_type: number
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Close of Escrow (days)
+  info:
+    summary: The number of days from acceptance to the close of escrow.
+    detail: >-
+      The number of days from acceptance to the close of escrow. This is when the sale is finalized and title transfers.
+      The California standard is 30 days, but timelines vary: cash offers may close in 14–21 days, while FHA/VA loans
+      often need 30–45 days. A shorter escrow period can make an offer more attractive to sellers.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: close_of_escrow_days
+  deeplink_key: closeOfEscrowDays
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: acceptance_date
+  label: Acceptance Date
+  section: closing_possession
+  field_type: date
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "1"
+    section_label: Offer
+    paragraph: null
+    field_name: Acceptance Date
+  info:
+    summary: The date the offer was accepted by the seller.
+    detail: >-
+      The date the offer was accepted by the seller. This date triggers all time-based deadlines in the agreement —
+      contingency periods, deposit delivery, and close of escrow are all counted from this date. It is filled in at the
+      time of acceptance, not when the offer is submitted.
+    rpa_context: RPA Section 1 (Offer)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: acceptance_date
+  deeplink_key: acceptanceDate
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: possession_timing
+  label: Possession Timing
+  section: closing_possession
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Possession Timing
+  info:
+    summary: When the buyer takes physical possession of the property.
+    detail: >-
+      When the buyer takes physical possession of the property. "At Close of Escrow" means the buyer gets keys on
+      closing day (most common). "After Close" means the seller stays in the property for an agreed period after
+      closing. "To Be Determined" means the timing will be negotiated separately or addressed in an addendum.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: possession_timing
+  deeplink_key: possessionTiming
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: possession_at_close
+  label: Possession at Close
+  section: closing_possession
+  field_type: boolean
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Possession at Close
+  info:
+    summary: A yes/no confirmation that the buyer will receive possession at the close of escrow.
+    detail: >-
+      A yes/no confirmation that the buyer will receive possession at the close of escrow. When set to "Yes," the buyer
+      receives the keys and right to occupy the property on the day escrow closes. If the seller needs additional time,
+      this should be "No" and a rent-back arrangement should be specified below.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: possession_at_close
+  deeplink_key: possessionAtClose
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: rent_back_requested
+  label: Rent Back Requested
+  section: closing_possession
+  field_type: boolean
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Rent Back Requested
+  info:
+    summary: Whether the seller has requested to remain in the property after the close of escrow.
+    detail: >-
+      Whether the seller has requested to remain in the property after the close of escrow. A rent-back allows the
+      seller to stay as a tenant for a specified period, which is common when the seller is purchasing another property
+      and needs time to move. The terms of the rent-back (duration and rate) are specified in the fields below.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: rent_back_requested
+  deeplink_key: rentBackRequested
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: rent_back_days
+  label: Rent Back Days
+  section: closing_possession
+  field_type: number
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Rent Back Days
+  info:
+    summary: The number of days the seller will remain in the property after closing under the rent-back agreement.
+    detail: >-
+      The number of days the seller will remain in the property after closing under the rent-back agreement. Rent-backs
+      longer than 60 days may cause lender issues for the buyer, as the property could be classified as investment
+      rather than owner-occupied. Short rent-backs of 3–14 days are most common.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: rent_back_days
+  deeplink_key: rentBackDays
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: seller_post_possession_days
+  label: Seller Post-Possession Days
+  section: closing_possession
+  field_type: number
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3M
+    section_label: Occupancy
+    paragraph: null
+    field_name: Seller Post-Possession Days
+  info:
+    summary: The number of days the seller may remain in possession after the close of escrow.
+    detail: >-
+      The number of days the seller may remain in possession after the close of escrow. This is the formal
+      post-possession period agreed to in the contract. If the seller overstays this period, the buyer may have legal
+      remedies. This should align with the rent-back days if a rent-back is being used.
+    rpa_context: RPA Section 3M (Occupancy)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: seller_post_possession_days
+  deeplink_key: sellerPostPossessionDays
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: post_possession_daily_rate
+  label: Post-Possession Daily Rate
+  section: closing_possession
+  field_type: currency
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3M
+    section_label: Occupancy
+    paragraph: null
+    field_name: Post-Possession Daily Rate
+  info:
+    summary: The daily rate the seller pays the buyer for each day of post-possession occupancy.
+    detail: >-
+      The daily rate the seller pays the buyer for each day of post-possession occupancy. This compensates the buyer for
+      the seller's continued use of the property after closing. A common formula is the buyer's daily PITI (principal,
+      interest, taxes, insurance) cost, though the rate is negotiable.
+    rpa_context: RPA Section 3M (Occupancy)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: post_possession_daily_rate
+  deeplink_key: postPossessionDailyRate
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: loan_contingency_period
+  label: Loan Contingency Period
+  section: contingencies
+  field_type: number
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Loan Contingency Period
+  info:
+    summary: The number of days the buyer has to secure loan approval.
+    detail: >-
+      The number of days the buyer has to secure loan approval. The default is 17 days from acceptance. During this
+      period, the buyer can cancel the agreement if they cannot obtain financing. Removing or shortening the loan
+      contingency period strengthens the offer but increases the buyer's risk of losing their deposit if the loan falls
+      through.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: loan_contingency_days
+  deeplink_key: loanContingencyPeriod
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: appraisal_contingency_period
+  label: Appraisal Contingency Period
+  section: contingencies
+  field_type: number
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Appraisal Contingency Period
+  info:
+    summary: The number of days the buyer has to obtain a satisfactory appraisal.
+    detail: >-
+      The number of days the buyer has to obtain a satisfactory appraisal. The default is 17 days from acceptance. If
+      the property appraises below the purchase price, the buyer can negotiate, make up the difference, or cancel during
+      this period. Waiving the appraisal contingency is common in competitive markets but means the buyer must cover any
+      shortfall.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: appraisal_contingency_days
+  deeplink_key: appraisalContingencyPeriod
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: investigation_period
+  label: Investigation Period
+  section: contingencies
+  field_type: number
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Investigation Period
+  info:
+    summary: The number of days the buyer has to investigate the property's physical condition, including inspections.
+    detail: >-
+      The number of days the buyer has to investigate the property's physical condition, including inspections. The
+      default is 17 days from acceptance. This is the buyer's window to conduct home inspections, review reports, and
+      request repairs or credits. All physical inspections should be completed within this period.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: investigation_period_days
+  deeplink_key: investigationPeriod
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: insurance_contingency
+  label: Insurance Contingency
+  section: contingencies
+  field_type: boolean
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Insurance Contingency
+  info:
+    summary: The number of days the buyer has to confirm acceptable homeowner's insurance availability and cost.
+    detail: >-
+      The number of days the buyer has to confirm acceptable homeowner's insurance availability and cost. In California
+      wildfire zones or flood-prone areas, obtaining insurance can be challenging and expensive. This contingency allows
+      the buyer to cancel if they cannot secure adequate coverage at a reasonable cost.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_section_r
+  derived_from: null
+  schema_key: insurance_contingency_days
+  deeplink_key: insuranceContingency
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - section_r
+- id: seller_documents_review
+  label: Seller Documents Review
+  section: contingencies
+  field_type: number
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Seller Documents Review
+  info:
+    summary: The number of days the buyer has to review seller-provided disclosures and documents.
+    detail: >-
+      The number of days the buyer has to review seller-provided disclosures and documents. This includes the Transfer
+      Disclosure Statement (TDS), Seller Property Questionnaire (SPQ), Natural Hazard Disclosure, and any other
+      seller-provided reports. The buyer should carefully review all documents within this period.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: seller_documents_review_days
+  deeplink_key: sellerDocumentsReview
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: title_report_review
+  label: Title Report Review
+  section: contingencies
+  field_type: number
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Title Report Review
+  info:
+    summary: The number of days the buyer has to review the preliminary title report.
+    detail: >-
+      The number of days the buyer has to review the preliminary title report. The title report reveals ownership
+      history, liens, easements, encumbrances, and other matters affecting the property's title. The buyer should review
+      for any issues that could affect ownership or intended use of the property.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: title_report_review_days
+  deeplink_key: titleReportReview
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: hoa_disclosure_review
+  label: HOA Disclosure Review
+  section: contingencies
+  field_type: number
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: HOA Disclosure Review
+  info:
+    summary: The number of days the buyer has to review HOA documents if the property is in a homeowners association.
+    detail: >-
+      The number of days the buyer has to review HOA documents if the property is in a homeowners association. HOA
+      documents include CC&Rs, bylaws, financial statements, meeting minutes, and pending special assessments. These
+      documents can reveal significant financial obligations or restrictions on property use.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: hoa_disclosure_review_days
+  deeplink_key: hoaDisclosureReview
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: leased_items_review
+  label: Leased Items Review
+  section: contingencies
+  field_type: number
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Leased Items Review
+  info:
+    summary: The number of days the buyer has to review any leased items that remain with the property.
+    detail: >-
+      The number of days the buyer has to review any leased items that remain with the property. Common leased items
+      include solar panels, water softeners, propane tanks, and security systems. The buyer should understand the lease
+      terms, monthly costs, and whether the leases are assumable or must be paid off at closing.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: leased_items_review_days
+  deeplink_key: leasedItemsReview
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: informational_access_period
+  label: Informational Access Period
+  section: contingencies
+  field_type: number
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Informational Access Period
+  info:
+    summary: >-
+      The number of days the buyer has to access the property for informational purposes only, without the right to
+      request repairs.
+    detail: >-
+      The number of days the buyer has to access the property for informational purposes only, without the right to
+      request repairs. This period may extend beyond the investigation contingency and is used for activities like
+      taking measurements, planning renovations, or showing the property to contractors.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: informational_access_days
+  deeplink_key: informationalAccessPeriod
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: inspection_types
+  label: Inspection Types
+  section: contingencies
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Inspection Types
+  info:
+    summary: A comma-separated list of the types of inspections the buyer intends to conduct.
+    detail: >-
+      A comma-separated list of the types of inspections the buyer intends to conduct. Common inspections include
+      general home inspection, termite/pest, roof, chimney, sewer/septic, pool/spa, foundation, mold, and radon.
+      Specifying inspection types upfront sets expectations with the seller about the scope of the investigation.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: inspection_types
+  deeplink_key: inspectionTypes
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: sale_of_property_contingency
+  label: Sale of Property Contingency
+  section: contingencies
+  field_type: boolean
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Sale of Property Contingency
+  info:
+    summary: Whether the buyer's offer is contingent on the sale of another property they own.
+    detail: >-
+      Whether the buyer's offer is contingent on the sale of another property they own. If "Yes," the buyer must sell
+      their existing property before (or concurrently with) closing on this purchase. This contingency weakens an offer
+      because it introduces uncertainty about whether the buyer's property will sell. A Contingency of Property Sale
+      addendum (COP) is typically attached.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: sale_of_property_contingency
+  deeplink_key: saleOfPropertyContingency
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: contingency_waived_at_offer
+  label: Contingency Waived at Offer
+  section: contingencies
+  field_type: boolean
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Contingency Waived at Offer
+  info:
+    summary: Whether the buyer is waiving contingencies at the time of offer submission.
+    detail: >-
+      Whether the buyer is waiving contingencies at the time of offer submission. Waiving contingencies makes the offer
+      more competitive but removes the buyer's protections. Common in hot markets, this typically applies to the
+      appraisal and/or loan contingency. The buyer should fully understand the financial risk before waiving. A
+      Contingency Removal form (CR-B) may be triggered.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: contingency_waived_at_offer
+  deeplink_key: contingencyWaivedAtOffer
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: verification_of_cash
+  label: Verification of Cash
+  section: contingencies
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3H
+    section_label: Verification
+    paragraph: null
+    field_name: Verification of Cash
+  info:
+    summary: >-
+      The number of days within which the buyer must verify their cash funds for an all-cash purchase or the cash
+      portion of their purchase.
+    detail: >-
+      The number of days within which the buyer must verify their cash funds for an all-cash purchase or the cash
+      portion of their purchase. The buyer provides documentation (bank statements, investment accounts) to the seller
+      showing sufficient liquid funds. This verification gives the seller confidence the buyer can close.
+    rpa_context: RPA Section 3H (Verification)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: verification_cash_days
+  deeplink_key: verificationOfCash
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: verification_of_down_payment
+  label: Verification of Down Payment
+  section: contingencies
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3H
+    section_label: Verification
+    paragraph: null
+    field_name: Verification of Down Payment
+  info:
+    summary: The number of days within which the buyer must verify their down payment funds.
+    detail: >-
+      The number of days within which the buyer must verify their down payment funds. The buyer provides documentation
+      proving they have the down payment amount available. This is separate from the loan pre-approval and gives the
+      seller assurance that the buyer has the cash needed for their portion of the purchase price.
+    rpa_context: RPA Section 3H (Verification)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: verification_down_payment_days
+  deeplink_key: verificationOfDownPayment
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: final_verification_of_funds
+  label: Final Verification of Funds
+  section: contingencies
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3H
+    section_label: Verification
+    paragraph: null
+    field_name: Final Verification of Funds
+  info:
+    summary: The number of days before close of escrow by which a final verification of the buyer's funds must occur.
+    detail: >-
+      The number of days before close of escrow by which a final verification of the buyer's funds must occur. This is a
+      last check to confirm the buyer still has the necessary funds to close. It typically occurs 5–7 days before
+      closing and catches any changes in the buyer's financial situation since the initial verification.
+    rpa_context: RPA Section 3H (Verification)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: final_verification_days
+  deeplink_key: finalVerificationOfFunds
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: city
+  label: City
+  section: property_information
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "1"
+    section_label: Offer
+    paragraph: null
+    field_name: City
+  info:
+    summary: The city where the property is located.
+    detail: >-
+      The city where the property is located. This should match the city name as it appears on the property's legal
+      address and MLS listing. Some unincorporated areas may use a community name rather than a formal city — use
+      whatever is standard for the mailing address.
+    rpa_context: RPA Section 1 (Offer)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: property_city
+  deeplink_key: city
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: state
+  label: State
+  section: property_information
+  field_type: text
+  source: null
+  info:
+    summary: The state where the property is located.
+    detail: >-
+      The state where the property is located. For the C.A.R. RPA, this will always be California (CA). This field is
+      included for completeness and data consistency across the form.
+    rpa_context: RPA Section 1 (Offer)
+  classification: routing
+  derived_from: null
+  schema_key: null
+  deeplink_key: state
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - routing
+- id: zip_code
+  label: ZIP Code
+  section: property_information
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "1"
+    section_label: Offer
+    paragraph: null
+    field_name: ZIP Code
+  info:
+    summary: The ZIP code of the property.
+    detail: >-
+      The ZIP code of the property. Use the 5-digit ZIP code matching the property's mailing address. The ZIP code can
+      affect insurance rates, school districts, and tax jurisdictions, so accuracy matters.
+    rpa_context: RPA Section 1 (Offer)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: property_zip
+  deeplink_key: zipCode
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: county
+  label: County
+  section: property_information
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "1"
+    section_label: Offer
+    paragraph: null
+    field_name: County
+  info:
+    summary: The county where the property is located.
+    detail: >-
+      The county where the property is located. California has 58 counties, and the county affects transfer tax rates,
+      recording fees, and local ordinances. Some cities span multiple counties, so verify the county using the APN or
+      tax records rather than assuming from the city name.
+    rpa_context: RPA Section 1 (Offer)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: property_county
+  deeplink_key: county
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: apn
+  label: APN
+  section: property_information
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "1"
+    section_label: Offer
+    paragraph: null
+    field_name: APN
+  info:
+    summary: The Assessor's Parcel Number, a unique identifier assigned to the property by the county assessor's office.
+    detail: >-
+      The Assessor's Parcel Number, a unique identifier assigned to the property by the county assessor's office. The
+      APN is used to identify the exact parcel for tax and legal purposes. It can be found on the property tax bill, MLS
+      listing, or county assessor website. Format varies by county (e.g., 123-456-789).
+    rpa_context: RPA Section 1 (Offer)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: apn
+  deeplink_key: apn
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: intended_use
+  label: Intended Use
+  section: property_information
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "1"
+    section_label: Offer
+    paragraph: null
+    field_name: Intended Use
+  info:
+    summary: How the buyer intends to use the property.
+    detail: >-
+      How the buyer intends to use the property. Options are Primary Residence, Vacation Home, or Investment Property.
+      This affects financing terms — primary residences typically get the best loan rates, while investment properties
+      require higher down payments and have higher rates. It also affects tax treatment, insurance requirements, and
+      potential rent-back restrictions.
+    rpa_context: RPA Section 1 (Offer)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: intended_use
+  deeplink_key: intendedUse
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: included_items
+  label: Included Items
+  section: items_personal_property
+  field_type: textarea
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Included Items
+  info:
+    summary: Items that are included in the sale and will remain with the property.
+    detail: >-
+      Items that are included in the sale and will remain with the property. By default, the RPA includes all fixtures
+      and fittings attached to the property (e.g., built-in appliances, window coverings, attached shelving). Use this
+      field to list any additional items the buyer expects to receive, such as a refrigerator, washer/dryer, or outdoor
+      furniture. Be specific to avoid disputes.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: included_items
+  deeplink_key: includedItems
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: excluded_items
+  label: Excluded Items
+  section: items_personal_property
+  field_type: textarea
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Excluded Items
+  info:
+    summary: Items the seller is excluding from the sale and will take with them.
+    detail: >-
+      Items the seller is excluding from the sale and will take with them. If the seller wants to remove something that
+      would normally be considered a fixture (e.g., a chandelier, built-in wine fridge, or mounted TV), it must be
+      explicitly excluded here. Items not listed as excluded are assumed to convey with the property.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: excluded_items
+  deeplink_key: excludedItems
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: personal_property_included
+  label: Personal Property Included
+  section: items_personal_property
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Personal Property Included
+  info:
+    summary: Personal property (non-fixtures) that the buyer and seller agree to include in the sale.
+    detail: >-
+      Personal property (non-fixtures) that the buyer and seller agree to include in the sale. Personal property is
+      movable and not attached to the real estate — examples include free-standing appliances, patio furniture, or
+      storage sheds that are not permanently affixed. Including personal property in the sale may affect the appraised
+      value and loan terms.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: personal_property_included
+  deeplink_key: personalPropertyIncluded
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: hoa_name
+  label: HOA Name
+  section: hoa
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: HOA Name
+  info:
+    summary: The name of the homeowners association governing the property.
+    detail: >-
+      The name of the homeowners association governing the property. If the property is in an HOA, the buyer is
+      obligated to join and comply with the CC&Rs. Enter the full legal name of the HOA. If there are multiple HOAs
+      (e.g., a master and sub-association), list the primary one here.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: hoa_name
+  deeplink_key: hoaName
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: hoa_dues
+  label: HOA Dues
+  section: hoa
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: HOA Dues
+  info:
+    summary: The amount of the regular HOA dues payment.
+    detail: >-
+      The amount of the regular HOA dues payment. Enter the dollar amount for the period specified in the frequency
+      field below. HOA dues cover common area maintenance, amenities, insurance, and reserves. The buyer should review
+      the HOA budget and reserve study to assess whether a special assessment is likely.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: hoa_dues
+  deeplink_key: hoaDues
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: hoa_dues_frequency
+  label: HOA Dues Frequency
+  section: hoa
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: HOA Dues Frequency
+  info:
+    summary: How often HOA dues are paid.
+    detail: >-
+      How often HOA dues are paid. Options are Monthly, Quarterly, or Annually. Monthly is most common. The frequency
+      affects the buyer's monthly housing expense calculation, which lenders use for qualification. Multiply accordingly
+      to determine the annual cost.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: hoa_dues_frequency
+  deeplink_key: hoaDuesFrequency
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: topa_applies
+  label: TOPA Applies
+  section: hoa
+  field_type: boolean
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: TOPA Applies
+  info:
+    summary: Whether the Tenant-Occupied Property Addendum applies to this transaction.
+    detail: >-
+      Whether the Tenant-Occupied Property Addendum applies to this transaction. If the property currently has tenants,
+      TOPA must be attached to address tenant rights, security deposits, lease terms, and occupancy issues. California
+      tenant protection laws (including local rent control ordinances) may affect the buyer's ability to occupy the
+      property.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: topa_applies
+  deeplink_key: topaApplies
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: buyer_intent
+  label: Buyer Intent
+  section: occupancy_buyer_intent
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3M
+    section_label: Occupancy
+    paragraph: null
+    field_name: Buyer Intent
+  info:
+    summary: How the buyer intends to use the property after closing.
+    detail: >-
+      How the buyer intends to use the property after closing. Options are Primary Residence, Secondary Home, Investment
+      Property, or Other. This must match what the buyer represents to their lender — misrepresenting occupancy intent
+      on a mortgage application is fraud. Sellers may prefer owner-occupant buyers in some markets.
+    rpa_context: RPA Section 3M (Occupancy)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyer_intent
+  deeplink_key: buyerIntent
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: tenant_status
+  label: Tenant Status
+  section: occupancy_buyer_intent
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3M
+    section_label: Occupancy
+    paragraph: null
+    field_name: Tenant Status
+  info:
+    summary: The current occupancy status of the property.
+    detail: >-
+      The current occupancy status of the property. "Vacant" means no one is living there. "Occupied, Vacating at Close"
+      means current tenants will leave by closing. "Occupied, Remaining After Close" means tenants will stay (buyer
+      becomes landlord). "Seller Occupied" means the seller currently lives in the property. Tenant status affects
+      possession timing, required disclosures, and may trigger the TOPA addendum.
+    rpa_context: RPA Section 3M (Occupancy)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: tenant_status
+  deeplink_key: tenantStatus
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: home_warranty_waived
+  label: Home Warranty Waived
+  section: home_warranty
+  field_type: boolean
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Home Warranty Waived
+  info:
+    summary: Whether the buyer is waiving the right to a home warranty.
+    detail: >-
+      Whether the buyer is waiving the right to a home warranty. A home warranty covers repair or replacement of major
+      systems and appliances (HVAC, plumbing, electrical, appliances) for typically one year after closing. Waiving the
+      warranty removes this protection. In competitive markets, buyers sometimes waive to simplify the offer.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: home_warranty_waived
+  deeplink_key: homeWarrantyWaived
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: home_warranty_paid_by
+  label: Home Warranty Paid By
+  section: home_warranty
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Home Warranty Paid By
+  info:
+    summary: Who pays for the home warranty.
+    detail: >-
+      Who pays for the home warranty. Options are Buyer, Seller, Split, or Other. Traditionally in California, the
+      seller pays for the home warranty as a gesture of good faith, but this is negotiable. The cost typically ranges
+      from $400 to $800 depending on coverage level and provider.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: home_warranty_paid_by
+  deeplink_key: homeWarrantyPaidBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: home_warranty_cost
+  label: Home Warranty Cost
+  section: home_warranty
+  field_type: currency
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Home Warranty Cost
+  info:
+    summary: The dollar amount of the home warranty plan.
+    detail: >-
+      The dollar amount of the home warranty plan. This varies by provider, coverage level, and property size. Basic
+      plans cover major systems only, while premium plans include appliances and additional coverage. Get quotes from
+      the warranty company to enter an accurate amount.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: home_warranty_cost
+  deeplink_key: homeWarrantyCost
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: home_warranty_company
+  label: Home Warranty Company
+  section: home_warranty
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Home Warranty Company
+  info:
+    summary: The name of the home warranty company providing coverage.
+    detail: >-
+      The name of the home warranty company providing coverage. Common California providers include American Home
+      Shield, First American Home Warranty, and Fidelity National Home Warranty. The buyer or seller may have a
+      preference based on past experience or agent recommendation.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: home_warranty_company
+  deeplink_key: homeWarrantyCompany
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: title_company
+  label: Title Company
+  section: title_escrow
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Title Company
+  info:
+    summary: The name of the title company that will issue the title insurance policy and handle the title search.
+    detail: >-
+      The name of the title company that will issue the title insurance policy and handle the title search. In
+      California, the buyer typically selects the title company, though this is negotiable. The title company examines
+      public records to verify ownership and identify any liens or encumbrances on the property.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: title_company
+  deeplink_key: titleCompany
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: vesting
+  label: Vesting
+  section: title_escrow
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Vesting
+  info:
+    summary: How the buyer will hold title to the property.
+    detail: >-
+      How the buyer will hold title to the property. Common vesting options in California include: Community Property
+      (married couples), Community Property with Right of Survivorship, Joint Tenants (equal shares, right of
+      survivorship), Tenants in Common (can have unequal shares), or as a Trust. Vesting affects inheritance, tax
+      treatment, and liability. Buyers should consult an attorney or tax advisor.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: vesting
+  deeplink_key: vesting
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: title_cost_split
+  label: Title Cost Split
+  section: title_escrow
+  field_type: currency
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Title Cost Split
+  info:
+    summary: Who pays for the owner's title insurance policy.
+    detail: >-
+      Who pays for the owner's title insurance policy. Options are Buyer Pays, Seller Pays, or 50/50 Split. In Southern
+      California, the seller customarily pays for the owner's title policy, while in Northern California, the buyer
+      often pays. Local custom varies by county, so check the prevailing practice in your area.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: title_cost_split
+  deeplink_key: titleCostSplit
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: preliminary_title_report_reviewed
+  label: Preliminary Title Report Reviewed
+  section: title_escrow
+  field_type: number
+  source: null
+  info:
+    summary: Whether the buyer has reviewed the preliminary title report (PTR).
+    detail: >-
+      Whether the buyer has reviewed the preliminary title report (PTR). The PTR shows the current ownership, existing
+      liens, easements, and other encumbrances on the property. Reviewing the PTR before or soon after submitting an
+      offer helps the buyer identify potential title issues early in the transaction.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: workflow_only
+  derived_from: null
+  schema_key: preliminary_title_report_reviewed
+  deeplink_key: preliminaryTitleReportReviewed
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - workflow_only
+- id: title_insurance_paid_by
+  label: Title Insurance Paid By
+  section: title_escrow
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Title Insurance Paid By
+  info:
+    summary: Who pays for the title insurance policy.
+    detail: >-
+      Who pays for the title insurance policy. Options are Buyer, Seller, Split, or Other. Title insurance protects
+      against losses from defects in title that were not discovered during the title search. The owner's policy protects
+      the buyer, while the lender's policy (required for financed purchases) protects the lender.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: title_insurance_paid_by
+  deeplink_key: titleInsurancePaidBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: escrow_fees_paid_by
+  label: Escrow Fees Paid By
+  section: title_escrow
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Escrow Fees Paid By
+  info:
+    summary: Who pays the escrow company's fees for handling the transaction.
+    detail: >-
+      Who pays the escrow company's fees for handling the transaction. Options are Buyer, Seller, Split, or Other.
+      Escrow fees cover the neutral third party's work in managing documents, funds, and the closing process. In many
+      California markets, escrow fees are split 50/50 between buyer and seller, but this is negotiable.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: escrow_fees_paid_by
+  deeplink_key: escrowFeesPaidBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: nhd_paid_by
+  label: NHD Paid By
+  section: disclosures_inspections
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: NHD Paid By
+  info:
+    summary: Who pays for the Natural Hazard Disclosure (NHD) report.
+    detail: >-
+      Who pays for the Natural Hazard Disclosure (NHD) report. The NHD report identifies whether the property is in a
+      designated natural hazard zone, including flood, fire, earthquake fault, seismic hazard, landslide, and wildfire
+      zones. In California, the seller is required to provide this disclosure, but who pays for the report is
+      negotiable.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: nhd_paid_by
+  deeplink_key: nhdPaidBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: home_inspection_paid_by
+  label: Home Inspection Paid By
+  section: disclosures_inspections
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Home Inspection Paid By
+  info:
+    summary: Who pays for the general home inspection.
+    detail: >-
+      Who pays for the general home inspection. A professional home inspection covers the property's structural
+      components, roof, plumbing, electrical, HVAC, and other systems. The buyer typically pays for this inspection,
+      which usually costs $400–$800 depending on property size. The inspection report informs the buyer's repair
+      requests.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: home_inspection_paid_by
+  deeplink_key: homeInspectionPaidBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: termite_inspection_paid_by
+  label: Termite Inspection Paid By
+  section: disclosures_inspections
+  field_type: select
+  source: null
+  info:
+    summary: Who pays for the termite (wood-destroying pest) inspection.
+    detail: >-
+      Who pays for the termite (wood-destroying pest) inspection. While not a separate line item in the standard RPA,
+      termite inspections are very commonly negotiated in California transactions. The inspection identifies active
+      infestations and structural damage. In many markets, the seller customarily pays for Section 1 (active
+      infestation) work, while Section 2 (preventive) is negotiable.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: document_bound_section_r
+  derived_from: null
+  schema_key: null
+  deeplink_key: termiteInspectionPaidBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - section_r
+- id: wildfire_disclosure_paid_by
+  label: Wildfire Disclosure Paid By
+  section: disclosures_inspections
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Wildfire Disclosure Paid By
+  info:
+    summary: Who pays for wildfire-related disclosure reports.
+    detail: >-
+      Who pays for wildfire-related disclosure reports. With increasing wildfire risk in California, this report
+      assesses the property's wildfire hazard zone status and may include information about defensible space
+      requirements, fire-resistant construction standards, and local fire authority regulations.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: wildfire_disclosure_paid_by
+  deeplink_key: wildfireDisclosurePaidBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: safety_device_compliance_paid_by
+  label: Safety Device Compliance Paid By
+  section: disclosures_inspections
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Safety Device Compliance Paid By
+  info:
+    summary: Who pays for compliance with California safety device requirements.
+    detail: >-
+      Who pays for compliance with California safety device requirements. State law requires sellers to ensure the
+      property has compliant smoke detectors, carbon monoxide detectors, and water heater bracing. This field determines
+      who pays for any installation or upgrades needed to meet current code requirements.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: safety_device_compliance_paid_by
+  deeplink_key: safetyDeviceCompliancePaidBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: government_inspections_paid_by
+  label: Government Inspections Paid By
+  section: disclosures_inspections
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Government Inspections Paid By
+  info:
+    summary: Who pays for government-required inspections.
+    detail: >-
+      Who pays for government-required inspections. Some local jurisdictions require specific inspections before a
+      property can be sold, such as sewer lateral inspections, energy audits, or building permit compliance reviews. The
+      required inspections vary by city and county.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: govt_inspections_paid_by
+  deeplink_key: governmentInspectionsPaidBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: government_corrections_paid_by
+  label: Government Corrections Paid By
+  section: disclosures_inspections
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Government Corrections Paid By
+  info:
+    summary: Who pays for corrections or repairs required by government inspections.
+    detail: >-
+      Who pays for corrections or repairs required by government inspections. If a government inspection reveals code
+      violations or required upgrades (e.g., sewer line replacement, seismic retrofitting), this field determines who
+      bears the cost of those corrections. This is separate from who pays for the inspection itself.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: govt_corrections_paid_by
+  deeplink_key: governmentCorrectionsPaidBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: lender_title_policy_paid_by
+  label: Lender Title Policy Paid By
+  section: disclosures_inspections
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Lender Title Policy Paid By
+  info:
+    summary: Who pays for the lender's title insurance policy.
+    detail: >-
+      Who pays for the lender's title insurance policy. The lender's policy is required on all financed purchases and
+      protects the lender's interest in the property. It is separate from the owner's title policy. The buyer's lender
+      will require this policy as a condition of the loan, and the cost is based on the loan amount.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: lender_title_policy_paid_by
+  deeplink_key: lenderTitlePolicyPaidBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: county_transfer_tax_paid_by
+  label: County Transfer Tax Paid By
+  section: transfer_taxes
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: County Transfer Tax Paid By
+  info:
+    summary: Who pays the county transfer tax (documentary transfer tax).
+    detail: >-
+      Who pays the county transfer tax (documentary transfer tax). In most California counties, the rate is $1.10 per
+      $1,000 of the transfer price. The county transfer tax is assessed on every property sale and is paid at closing.
+      Customarily, the seller pays the county transfer tax in most California markets, but this is negotiable.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: county_transfer_tax_paid_by
+  deeplink_key: countyTransferTaxPaidBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: city_transfer_tax_paid_by
+  label: City Transfer Tax Paid By
+  section: transfer_taxes
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: City Transfer Tax Paid By
+  info:
+    summary: Who pays the city transfer tax, if applicable.
+    detail: >-
+      Who pays the city transfer tax, if applicable. Not all California cities impose a transfer tax — but those that do
+      can have significantly higher rates. For example, Los Angeles charges $4.50 per $1,000, Oakland charges $15.00 per
+      $1,000, and San Francisco charges a graduated rate. Check whether the property's city has a transfer tax and the
+      applicable rate.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: city_transfer_tax_paid_by
+  deeplink_key: cityTransferTaxPaidBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: other_fee_1_description
+  label: Other Fee 1 Description
+  section: other_fees
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Other Fee 1 Description
+  info:
+    summary: A description of any additional fee not covered by the standard categories above.
+    detail: >-
+      A description of any additional fee not covered by the standard categories above. Use this for
+      transaction-specific costs such as HOA transfer fees, retrofit costs, private transfer fees, or specialized
+      inspection costs. Be specific about what the fee covers so both parties understand the obligation.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: other_fee_1_description
+  deeplink_key: otherFee1Description
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: other_fee_1_paid_by
+  label: Other Fee 1 Paid By
+  section: other_fees
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Other Fee 1 Paid By
+  info:
+    summary: Who pays for the first additional fee described above.
+    detail: >-
+      Who pays for the first additional fee described above. Options are Buyer, Seller, Split, or Other. The allocation
+      should be agreed upon during negotiations and documented clearly to avoid disputes at closing.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: other_fee_1_paid_by
+  deeplink_key: otherFee1PaidBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: other_fee_2_description
+  label: Other Fee 2 Description
+  section: other_fees
+  field_type: text
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Other Fee 2 Description
+  info:
+    summary: A description of a second additional fee, if applicable.
+    detail: >-
+      A description of a second additional fee, if applicable. Like the first other fee, use this for costs that don't
+      fit the standard categories. Having two "other fee" slots allows flexibility for transactions with unique cost
+      allocations.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: other_fee_2_description
+  deeplink_key: otherFee2Description
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: other_fee_2_paid_by
+  label: Other Fee 2 Paid By
+  section: other_fees
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: 3Q
+    section_label: Costs & Credits
+    paragraph: null
+    field_name: Other Fee 2 Paid By
+  info:
+    summary: Who pays for the second additional fee described above.
+    detail: >-
+      Who pays for the second additional fee described above. Options are Buyer, Seller, Split, or Other. As with all
+      fee allocations, this should be clearly agreed upon in writing to prevent closing delays or disputes.
+    rpa_context: RPA Section 3Q (Costs & Credits)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: other_fee_2_paid_by
+  deeplink_key: otherFee2PaidBy
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: liquidated_damages
+  label: Liquidated Damages
+  section: contract_clauses
+  field_type: date
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "5"
+    section_label: Additional Terms
+    paragraph: null
+    field_name: Liquidated Damages
+  info:
+    summary: Whether the buyer agrees to the liquidated damages clause.
+    detail: >-
+      Whether the buyer agrees to the liquidated damages clause. When initialed by both buyer and seller, this clause
+      limits the seller's damages to the buyer's deposit if the buyer breaches the agreement (up to 3% of the purchase
+      price for residential property with 1–4 units that the buyer intends to occupy). This provides certainty to both
+      parties about the consequences of buyer default.
+    rpa_context: RPA Section 5 (Additional Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: liquidated_damages
+  deeplink_key: liquidatedDamages
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: arbitration_clause
+  label: Arbitration Clause
+  section: contract_clauses
+  field_type: select
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "5"
+    section_label: Additional Terms
+    paragraph: null
+    field_name: Arbitration Clause
+  info:
+    summary: Whether the buyer agrees to binding arbitration for disputes arising from the agreement.
+    detail: >-
+      Whether the buyer agrees to binding arbitration for disputes arising from the agreement. When initialed by both
+      parties, disputes are resolved through arbitration rather than court litigation. Arbitration is typically faster
+      and less expensive than a lawsuit, but the parties waive their right to a jury trial and have limited appeal
+      rights. This clause is optional.
+    rpa_context: RPA Section 5 (Additional Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: arbitration_clause
+  deeplink_key: arbitrationClause
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: all_inclusions_stay_with_property
+  label: All Inclusions Stay With Property
+  section: contract_clauses
+  field_type: boolean
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: All Inclusions Stay With Property
+  info:
+    summary: >-
+      Whether all items currently included with the property (fixtures, fittings, and specified items) will remain with
+      the property at close.
+    detail: >-
+      Whether all items currently included with the property (fixtures, fittings, and specified items) will remain with
+      the property at close. When set to "Yes," the buyer expects everything that is currently on the property and
+      considered a fixture to stay. Any items the seller wishes to remove must be listed in the Excluded Items field.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: all_inclusions_stay_with_property
+  deeplink_key: allInclusionsStayWithProperty
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: buyer_right_to_inspect
+  label: Buyer Right to Inspect
+  section: contract_clauses
+  field_type: boolean
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Buyer Right to Inspect
+  info:
+    summary: Whether the buyer retains the right to conduct inspections of the property.
+    detail: >-
+      Whether the buyer retains the right to conduct inspections of the property. This is a standard RPA provision that
+      allows the buyer to physically inspect the property and its systems during the investigation period. Setting this
+      to "Yes" is standard; setting it to "No" would mean the buyer is purchasing the property without any inspection
+      rights.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: buyer_right_to_inspect
+  deeplink_key: buyerRightToInspect
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: compliance_with_local_ordinances
+  label: Compliance With Local Ordinances
+  section: contract_clauses
+  field_type: boolean
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "3"
+    section_label: Finance Terms
+    paragraph: null
+    field_name: Compliance With Local Ordinances
+  info:
+    summary: Whether the agreement includes compliance with local government ordinances and requirements.
+    detail: >-
+      Whether the agreement includes compliance with local government ordinances and requirements. This addresses items
+      like city point-of-sale inspections, energy efficiency requirements, seismic retrofitting mandates, and other
+      local regulations that must be satisfied before or at closing. Requirements vary significantly by jurisdiction.
+    rpa_context: RPA Section 3 (Finance Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: compliance_with_local_ordinances
+  deeplink_key: complianceWithLocalOrdinances
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: time_is_of_essence
+  label: Time Is of Essence
+  section: contract_clauses
+  field_type: boolean
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "5"
+    section_label: Additional Terms
+    paragraph: null
+    field_name: Time Is of Essence
+  info:
+    summary: Whether the "time is of the essence" clause is included.
+    detail: >-
+      Whether the "time is of the essence" clause is included. This is a standard legal provision meaning that all dates
+      and deadlines in the agreement are firm and binding. Missing a deadline (deposit delivery, contingency removal,
+      closing date) could constitute a breach. This clause is included by default in the C.A.R. RPA and is rarely
+      removed.
+    rpa_context: RPA Section 5 (Additional Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: time_is_of_essence
+  deeplink_key: timeIsOfEssence
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: additional_terms
+  label: Additional Terms
+  section: additional_terms
+  field_type: textarea
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "5"
+    section_label: Additional Terms
+    paragraph: null
+    field_name: Additional Terms
+  info:
+    summary: A free-text field for any additional terms, conditions, or provisions not covered by the standard form fields.
+    detail: >-
+      A free-text field for any additional terms, conditions, or provisions not covered by the standard form fields. Use
+      this for special agreements between buyer and seller, such as: specific repair requests, personal property
+      agreements, leaseback terms beyond the standard fields, or any other unique conditions of the offer. Everything
+      entered here becomes a binding part of the agreement.
+    rpa_context: RPA Section 5 (Additional Terms)
+  classification: document_bound_rpa
+  derived_from: null
+  schema_key: additional_terms
+  deeplink_key: additionalTerms
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - rpa
+- id: escalation_increment
+  label: Escalation Increment
+  section: escalation_clause
+  field_type: text
+  source: null
+  info:
+    summary: The dollar amount by which the buyer's offer will automatically increase above the highest competing offer.
+    detail: >-
+      The dollar amount by which the buyer's offer will automatically increase above the highest competing offer. For
+      example, an increment of $5,000 means the buyer is willing to pay $5,000 more than any other offer, up to the
+      maximum price cap. Escalation clauses can be effective in multiple-offer situations but may not be accepted by all
+      sellers or listing agents.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: voicepilot_addition
+  derived_from: null
+  schema_key: null
+  deeplink_key: escalationIncrement
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - voicepilot_addition
+- id: maximum_price_cap
+  label: Maximum Price Cap
+  section: escalation_clause
+  field_type: currency
+  source: null
+  info:
+    summary: The absolute maximum price the buyer is willing to pay under the escalation clause.
+    detail: >-
+      The absolute maximum price the buyer is willing to pay under the escalation clause. The offer will escalate by the
+      specified increment above competing offers but will never exceed this cap. Set this at the highest price the buyer
+      is comfortable paying — the buyer should be prepared to pay up to this amount. The appraisal contingency (if not
+      waived) still protects against overpaying relative to market value.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: voicepilot_addition
+  derived_from: null
+  schema_key: null
+  deeplink_key: maximumPriceCap
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - voicepilot_addition
+- id: escalation_clause_text
+  label: Escalation Clause Text
+  section: escalation_clause
+  field_type: select
+  source: null
+  info:
+    summary: The full text of the escalation clause to be included in the offer.
+    detail: >-
+      The full text of the escalation clause to be included in the offer. This should specify the escalation increment,
+      maximum cap, and any conditions (such as requiring proof of the competing offer). Because escalation clauses are
+      not a standard C.A.R. form, the language should be reviewed by the buyer's agent and/or attorney to ensure it is
+      enforceable and clearly written.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: voicepilot_addition
+  derived_from: null
+  schema_key: null
+  deeplink_key: escalationClauseText
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - voicepilot_addition
+- id: compensation_type
+  label: Compensation Type
+  section: brbc
+  field_type: select
+  source: null
+  info:
+    summary: How the buyer's agent compensation is structured.
+    detail: >-
+      How the buyer's agent compensation is structured. Options include Percentage of Purchase Price, Flat Fee, Seller
+      Paid, Hourly, or Other. Since the NAR settlement changes in 2024, buyer agent compensation must be agreed upon in
+      writing (via BRBC) before touring properties. The compensation type selected here should match what is specified
+      in the executed BRBC agreement.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: derived
+  derived_from: null
+  schema_key: null
+  deeplink_key: compensationType
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - derived
+    - calculated
+- id: compensation_amount
+  label: Compensation ($)
+  section: brbc
+  field_type: currency
+  source: null
+  info:
+    summary: The dollar amount of buyer agent compensation, if structured as a flat fee.
+    detail: >-
+      The dollar amount of buyer agent compensation, if structured as a flat fee. This is the total amount the buyer's
+      agent will receive for their services in the transaction. If compensation is based on a percentage of the purchase
+      price, this field may be left blank in favor of the percentage field below.
+    rpa_context: RPA (Buyer Agent Compensation)
+  classification: document_bound_brbc
+  derived_from: null
+  schema_key: buyer_agent_compensation_amount
+  deeplink_key: compensationAmount
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - brbc
+- id: compensation_pct
+  label: Compensation (%)
+  section: brbc
+  field_type: percentage
+  source: null
+  info:
+    summary: The buyer agent compensation expressed as a percentage of the purchase price.
+    detail: >-
+      The buyer agent compensation expressed as a percentage of the purchase price. Common rates range from 2% to 3% of
+      the purchase price. This percentage is applied to the final purchase price (not the list price) to determine the
+      dollar amount of compensation. If a flat fee is used instead, this field may be left blank.
+    rpa_context: RPA (Buyer Agent Compensation)
+  classification: document_bound_brbc
+  derived_from: null
+  schema_key: buyer_agent_compensation_percent
+  deeplink_key: compensationPercent
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - brbc
+- id: compensation_payer
+  label: Compensation Payer
+  section: brbc
+  field_type: select
+  source: null
+  info:
+    summary: Who is paying the buyer's agent compensation.
+    detail: >-
+      Who is paying the buyer's agent compensation. Options are Seller, Buyer, or Other. Under the 2024 NAR settlement
+      rules, the seller is no longer required to offer compensation to the buyer's agent. The buyer may pay their agent
+      directly, the seller may offer compensation as a concession, or the parties may negotiate a split arrangement.
+    rpa_context: RPA (Buyer Agent Compensation)
+  classification: document_bound_brbc
+  derived_from: null
+  schema_key: buyer_agent_compensation_payer
+  deeplink_key: compensationPayer
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - brbc
+- id: retainer_amount
+  label: Retainer Amount
+  section: brbc
+  field_type: currency
+  source: null
+  info:
+    summary: The upfront retainer amount paid by the buyer to their agent, if applicable.
+    detail: >-
+      The upfront retainer amount paid by the buyer to their agent, if applicable. Some BRBC agreements require the
+      buyer to pay a retainer when the agreement is executed. This field captures that amount. The retainer may or may
+      not be credited toward the total compensation at closing — see the field below.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: document_bound_brbc
+  derived_from: null
+  schema_key: null
+  deeplink_key: retainerAmount
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - brbc
+- id: retainer_credited_at_close
+  label: Retainer Credited at Close
+  section: brbc
+  field_type: boolean
+  source: null
+  info:
+    summary: Whether the retainer amount paid by the buyer will be credited toward the total agent compensation at closing.
+    detail: >-
+      Whether the retainer amount paid by the buyer will be credited toward the total agent compensation at closing. If
+      "Yes," the retainer reduces the remaining balance owed. If "No," the retainer is a separate fee in addition to the
+      closing compensation. This should match the terms of the executed BRBC agreement.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: document_bound_brbc
+  derived_from: null
+  schema_key: null
+  deeplink_key: retainerCreditedAtClose
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - brbc
+- id: exclusive_representation
+  label: Exclusive Representation
+  section: brbc
+  field_type: boolean
+  source: null
+  info:
+    summary: Whether the buyer has an exclusive representation agreement with their agent.
+    detail: >-
+      Whether the buyer has an exclusive representation agreement with their agent. If "Yes," the buyer has agreed to
+      work exclusively with this agent for a specified period and cannot use another agent. If "No," the arrangement is
+      non-exclusive. Exclusive representation agreements are standard practice and provide assurance to both the buyer
+      and agent.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: document_bound_brbc
+  derived_from: null
+  schema_key: null
+  deeplink_key: exclusiveRepresentation
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - brbc
+- id: brbc_expiration_date
+  label: BRBC Expiration Date
+  section: brbc
+  field_type: date
+  source: null
+  info:
+    summary: The date on which the Buyer Representation and Broker Compensation agreement expires.
+    detail: >-
+      The date on which the Buyer Representation and Broker Compensation agreement expires. All BRBCs must have a
+      defined expiration date. After this date, the agreement terminates unless renewed. The buyer should be aware of
+      this date to ensure coverage through the expected closing period.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: document_bound_brbc
+  derived_from: null
+  schema_key: null
+  deeplink_key: brbcExpirationDate
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - brbc
+- id: brbc_executed
+  label: BRBC Executed
+  section: brbc
+  field_type: boolean
+  source: null
+  info:
+    summary: Whether the Buyer Representation and Broker Compensation agreement has been signed by the buyer.
+    detail: >-
+      Whether the Buyer Representation and Broker Compensation agreement has been signed by the buyer. As of August
+      2024, NAR settlement rules require a signed BRBC before an agent can show properties to a buyer. A "Yes" here
+      confirms the agreement is in place. The listing agent may request to see the executed BRBC.
+    rpa_context: RPA (Buyer Agent Compensation)
+  classification: document_bound_brbc
+  derived_from: null
+  schema_key: brbc_executed
+  deeplink_key: brbcExecuted
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - brbc
+- id: brbc_executed_date
+  label: BRBC Executed Date
+  section: brbc
+  field_type: date
+  source: null
+  info:
+    summary: The date on which the BRBC was signed by the buyer.
+    detail: >-
+      The date on which the BRBC was signed by the buyer. This establishes when the agreement went into effect and helps
+      determine the expiration date. If the BRBC is amended or renewed, this should reflect the most recent execution
+      date.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: document_bound_brbc
+  derived_from: null
+  schema_key: null
+  deeplink_key: brbcExecutedDate
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - brbc
+- id: brbc_buyer_brokerage_dre
+  label: "Buyer Brokerage DRE #"
+  section: brbc
+  field_type: license
+  source:
+    form: CA-RPA
+    form_version: "2024"
+    section: "2"
+    section_label: Agency Representation
+    paragraph: null
+    field_name: "Buyer Brokerage DRE #"
+  info:
+    summary: The California DRE license number for the buyer's brokerage firm, as recorded in the BRBC.
+    detail: >-
+      The California DRE license number for the buyer's brokerage firm, as recorded in the BRBC. This should match the
+      DRE number listed in the Agency section (Section 1 of this form). It confirms which brokerage is providing buyer
+      representation under the BRBC agreement.
+    rpa_context: RPA Section 2 (Agency Representation)
+  classification: document_bound_brbc
+  derived_from: null
+  schema_key: buyer_agent_dre_license
+  deeplink_key: buyerBrokerageDreBrbc
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - brbc
+- id: compensation_notes
+  label: Compensation Notes
+  section: brbc
+  field_type: textarea
+  source: null
+  info:
+    summary: Any additional notes or special terms related to buyer agent compensation.
+    detail: >-
+      Any additional notes or special terms related to buyer agent compensation. Use this for details such as bonus
+      compensation for dual agency, caps on total compensation, commission splits between agents, or any unique
+      arrangements not captured by the standard fields. These notes should be consistent with the executed BRBC.
+    rpa_context: VoicePilot Addition — not on the C.A.R. RPA
+  classification: document_bound_brbc
+  derived_from: null
+  schema_key: null
+  deeplink_key: compensationNotes
+  added_in: 1.0.0
+  deprecated_in: null
+  tags:
+    - brbc

@@ -1,0 +1,163 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/EthicaAI/voicepilot-forms/bridge/schema/bridge-entry.schema.json",
+  "title": "Bridge Entry",
+  "description": "Schema for a bridge entry connecting a deep link field to a C.A.R. form field",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "label",
+      "section",
+      "field_type",
+      "source",
+      "info",
+      "classification",
+      "derived_from",
+      "schema_key",
+      "deeplink_key",
+      "added_in",
+      "deprecated_in",
+      "tags"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$",
+        "description": "Stable snake_case identifier for this field"
+      },
+      "label": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Human-readable field label as shown in the UI"
+      },
+      "section": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$",
+        "description": "Deep link UI section this field belongs to"
+      },
+      "field_type": {
+        "type": "string",
+        "enum": [
+          "currency",
+          "percentage",
+          "number",
+          "text",
+          "email",
+          "phone",
+          "date",
+          "select",
+          "boolean",
+          "textarea",
+          "license"
+        ],
+        "description": "UI input type for this field"
+      },
+      "source": {
+        "oneOf": [
+          { "type": "null" },
+          {
+            "type": "object",
+            "required": ["form", "form_version", "section", "section_label"],
+            "additionalProperties": false,
+            "properties": {
+              "form": {
+                "type": "string",
+                "description": "Source form identifier (e.g. CA-RPA)"
+              },
+              "form_version": {
+                "type": "string",
+                "description": "Version of the source form"
+              },
+              "section": {
+                "type": "string",
+                "description": "Section number/letter on the source form"
+              },
+              "section_label": {
+                "type": "string",
+                "description": "Human-readable section label"
+              },
+              "paragraph": {
+                "type": ["string", "null"],
+                "description": "Paragraph reference within the section, if applicable"
+              },
+              "field_name": {
+                "type": ["string", "null"],
+                "description": "Field name as it appears on the source form"
+              }
+            }
+          }
+        ],
+        "description": "Source form reference. Null for non-RPA fields."
+      },
+      "info": {
+        "type": "object",
+        "required": ["summary", "detail", "rpa_context"],
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 500,
+            "description": "Brief description shown in the info tooltip"
+          },
+          "detail": {
+            "type": "string",
+            "minLength": 20,
+            "description": "Detailed explanation of the field"
+          },
+          "rpa_context": {
+            "type": "string",
+            "minLength": 1,
+            "description": "One-line RPA section reference or VoicePilot addition note"
+          }
+        }
+      },
+      "classification": {
+        "type": "string",
+        "enum": [
+          "document_bound_rpa",
+          "document_bound_brbc",
+          "document_bound_rpa_ad",
+          "document_bound_section_r",
+          "voicepilot_addition",
+          "workflow_only",
+          "routing",
+          "derived"
+        ],
+        "description": "How this field relates to the legal form ecosystem"
+      },
+      "derived_from": {
+        "type": ["string", "null"],
+        "description": "ID of the field this is derived from, or null"
+      },
+      "schema_key": {
+        "type": ["string", "null"],
+        "description": "Key in FreeTC offerDocumentSchema, or null if not mapped"
+      },
+      "deeplink_key": {
+        "type": ["string", "null"],
+        "description": "camelCase key used in the deep link URL parameters"
+      },
+      "added_in": {
+        "type": "string",
+        "pattern": "^\\d+\\.\\d+\\.\\d+$",
+        "description": "Bridge version when this entry was added"
+      },
+      "deprecated_in": {
+        "oneOf": [
+          { "type": "null" },
+          { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" }
+        ],
+        "description": "Bridge version when this entry was deprecated, or null"
+      },
+      "tags": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Classification and filtering tags"
+      }
+    }
+  }
+}
